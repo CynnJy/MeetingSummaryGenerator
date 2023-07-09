@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #fff;
+    font-family: 'Rubik', sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
+}
+
+
+img { border: none;}
+
+*:focus {
+    outline: none;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/**System Title**/
+.system-title {
+    color: #11294d;
+    padding: 15px;
+    text-align: center;
+    display: block;
+    /* width: 100%;
+    box-shadow: 3px 3px 10px 2px rgb(22 27 29 / 20%); */
+    border-bottom: 2px solid #494949;
+    width: 95%;
+    margin: 0 auto;
+}
+
+.system-title h1 {
+    font-family: 'Rubik', sans-serif;
+    font-size: 30px;
+    padding: 10px 0;
+    height: 50px;
+}
+
+/***--- Testt --- ***/
+.main-box {
+    display: block;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;
+}
+
+.box-left,
+.box-right {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    padding: 30px 0;
+}
+.box-left h3,
+.box-right h3 {
+    font-size: 22px;
+    color: #11294d;
+}
+
+/** Box Left **/
+.box-left { float: left;}
+
+.box-left .container,
+.box-right .container {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+/** Box Right **/
+.box-right .container {
+    height: 100%;
+}
+
+/** Upload Form **/
+
+.form-container {
+    display: block;
+    align-items: center;
+    padding: 15px 0;
+}
+
+span.title{
+    font-weight: 300;
+    font-size: 25px;
+    color: #3c57ab;
+}
+
+.upload-files-container {
+    background-color: #fff;
+    width: 100%;
+    padding: 30px 40px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: rgb(0 0 0 / 5%) 2px 2px 5px,
+        rgb(0 0 0 / 5%) 0px 2px 3px;
+}
+
+.drag-file-area {
+    border: 1.5px dashed #595959;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+    padding: 20px 50px;
+    width: 100%;
+    text-align: center;
+}
+
+
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+.upload-button-icon { padding-right: 10px;}
+
+.upload-button,
+.summary-button,
+.upload-label {
+    font-family: 'Rubik', sans-serif;
+    background-color: #ffdb82;
+    color: #3c57ab;
+    letter-spacing: 0.5px;
+    align-items: center;
+    font-size: 16px;
+    border: none;
+    height: 42px;
+    border-radius: 30px;
+    margin: 20px 0;
+    padding: 8px 30px;
+    cursor: pointer;
+}
+
+.upload-label{
+    margin: 0 auto !important;
+        display: block;
+        width: 100%;
+}
+
+.upload-button{
+    display: none;
+}
+.summary-button {
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+.upload-button:hover,
+.summary-button:hover,
+.upload-button:hover{
+    background-color: #ffb700;
+    color: #fff;
+    box-shadow: 0px 15px 20px rgba(67, 67, 67, 0.4);
+    transform: translateY(-7px);
+}
+
+.default-file-input {
+    opacity: 0;
+}
+
+/* Upload Warning */
+.vald-info {
+    display: none;
+    padding: 10px;
+    margin: 7px auto;
+    width: 85%;
+    font-size: 16px;
+    background: #ff6344;
+    color: #fff;
+    border-radius: 13px;
+    text-align: center;
+}
+
+
+/* Submit Area */
+.submit-part {
+    padding-top: 20px;
+}
+
+/* Result Output */
+.result-box {
+    margin-top: 10px;
+    border: 1px solid #595959;
+    padding: 15px;
+    height: 80%;
+    background: #fff;
+    border-radius: 2px;
+    overflow-y: overlay;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ffdb82;
+    border-radius: 10px;
+    transition: ease-in-out 0.5s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #ffb700;
+}
+
+a.back-button {
+    padding-top: 20px;
+    display: block;
+    text-decoration: none;
+    color: #ff6344;
+    transition: 0.5 ease-in-out;
+}
+
+a.back-button:hover{
+    font-weight: 600;
+}
+
