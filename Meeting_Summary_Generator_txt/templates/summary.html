@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Summary Generator</title>
+
+    <!--CSS style-->
+    <!-- <link rel="stylesheet" href="../templates/source/main.css"> -->
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+        
+    <div class="main-box">
+            
+    <div class="system-title">
+        <h1>Meeting Summary Generator</h1>
+    </div>
+
+            <!-- Left Box -->
+            <div class="box-left">
+                <div class="container">
+
+                    <!-- Upload File -->
+                    <h3>Step 01: Upload the File</h3>
+                
+                    <div class="form-container" enctype='multipart/form-data'>
+                        <div class="upload-files-container">
+                            <div class="drag-file-area">
+                                <span class="material-icons-outlined upload-button-icon"> check_circle </span>
+                                <div class="browse-box">
+                                    <label class="label"> {{ upload_msg }} </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Upload File -->
+
+                    <!-- Submit Button -->
+                    <div class="submit-part">
+                        <form action="http://localhost:5000/summary" method="POST">
+                            <h3>Step 02: Press the button for summarization</h3>
+                            <input type="submit" name="Summary" class="summary-button" id="submit">
+                        </form>
+                    </div>
+                    <!-- End of Submit Button -->
+                
+                </div>
+            </div>
+            <!-- End of Left Box -->
+
+            <!-- Right Box -->
+            <div class="box-right">
+                <div class="container">
+
+                    <h3>Result :</h3>
+
+                    <!-- Result Box-->
+                    <div class="result-box">
+                        <p id="summary-output">{{result}}</p>
+                    </div>
+                    <a href='http://127.0.0.1:5000/' class="back-button">Go back to summary a new file</a>
+                </div>
+            </div>
+
+        </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+
+</html>

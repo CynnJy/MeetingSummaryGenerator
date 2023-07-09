@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeting Summary Generator</title>
+
+    <!--CSS style-->
+    <link rel="stylesheet" type=text/css href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+        
+    <div class="main-box">
+    
+    <div class="system-title">
+        <h1>Meeting Summary Generator</h1>
+        </div>
+
+            <!-- Left Box -->
+            <div class="box-left">
+                <div class="container">
+
+                    <!-- Upload File -->
+                    <h3><span class="title">Step 01: </span>Upload the File</h3>
+                
+                    <form class="form-container" enctype='multipart/form-data' method="POST" action="http://localhost:5000/upload">
+                        <div class="upload-files-container">
+                            <div class="drag-file-area">
+                                <span class="material-icons-outlined upload-icon"> file_upload </span>
+                                <div class="browse-box">
+                                    <input type="file" class="default-file-input" name="file" onchange="return fileValidation()" id="file" required>
+                                    <label for="file" class="upload-label" id="upload-label">Choose a file</label>
+                                </div>
+                                <div class="vald-info" id="info"></div>
+                            </div>
+
+                            <input type="submit" class="upload-button" value="Upload" id="uploadSubmit">
+                            <label class="label"> {{ error_msg }} </label>
+
+                        </div>
+                    </form>
+                    <!-- End of Upload File -->
+
+                    <!-- Submit Button -->
+                    <div class="submit-part">
+                        <h3><span class="title">Step 02: </span>Press the button for summarization</h3>
+                        <input type="submit" name="Summary" class="summary-button" id="submit" style="pointer-events:none;">
+                    </div>
+                    <!-- End of Submit Button -->
+                </div>
+            </div>
+            <!-- End of Left Box -->
+
+            <!-- Right Box -->
+            <div class="box-right">
+                <div class="container">
+                    <h3><span class="title">Final</span> Result</h3>
+                    <!-- Result Box-->
+                    <div class="result-box">
+                        <p id="summary-output">{{result}}</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+
+</body>
+
+</html>
